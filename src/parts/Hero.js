@@ -1,6 +1,6 @@
 import React from "react";
 import gambar from "../assets/images/hero.png";
-import user from "../assets/images/author-0.png";
+import user from "../assets/images/me.png";
 
 const Hero = () => {
   return (
@@ -20,10 +20,10 @@ const Hero = () => {
           deserunt <br /> reprehenderit elit laborum.{" "}
         </p>
         <div className="flex mt-5 mb-5">
-            <img src={user} width={50} className="object-cover" style={{borderRadius: '50%'}} alt="" />
+            <img src={user} width={50} className="rounded-full object-cover" alt="" />
             <div className="flex flex-col ml-3 justify-center">
-                <p className="text-white text-sm">Leslie Alexander</p>
-                <p className="text-gray-400 text-xs">UI Designer</p>
+                <p className="text-white text-sm">Wiby Fabian Rianto</p>
+                <p className="text-gray-400 text-xs">FrontEnd Developer</p>
             </div>
         </div>
       </div>

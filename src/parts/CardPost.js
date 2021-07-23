@@ -7,9 +7,8 @@ import Post3 from "../assets/images/post3.png";
 import Post4 from "../assets/images/post4.png";
 import Post5 from "../assets/images/post5.png";
 import Post6 from "../assets/images/post6.png";
-import user1 from "../assets/images/author-1.png";
-import user2 from "../assets/images/author-2.png";
-import user3 from "../assets/images/author-3.png";
+import user from "../assets/images/me.png";
+
 
 const CardPost = () => {
   return (
@@ -26,10 +25,10 @@ const CardPost = () => {
           dolor.
         </p>
         <div className="flex items-center mt-3">
-            <img src={user1} width={50} alt="" />
+            <img src={user} className="rounded-full object-cover" width={50} alt="" />
             <div className="flex flex-col ml-3">
-                <p className="text-white text-sm">Jenny Wilson</p>
-                <p className="text-gray-400 text-xs">Product Designer</p>
+                <p className="text-white text-sm">Wiby Fabian Rianto</p>
+                <p className="text-gray-400 text-xs">FrontEnd Developer</p>
             </div>
         </div>
       </div>
@@ -45,10 +44,10 @@ const CardPost = () => {
           dolor.
         </p>
         <div className="flex items-center mt-3">
-            <img src={user2} width={50} alt="" />
+            <img src={user} className="rounded-full object-cover" width={50} alt="" />
             <div className="flex flex-col ml-3">
-                <p className="text-white text-sm">Jenny Wilson</p>
-                <p className="text-gray-400 text-xs">Product Designer</p>
+                <p className="text-white text-sm">Wiby Fabian Rianto</p>
+                <p className="text-gray-400 text-xs">FrontEnd Developer</p>
             </div>
         </div>
       </div>
@@ -64,10 +63,10 @@ const CardPost = () => {
           dolor.
         </p>
         <div className="flex items-center mt-3">
-            <img src={user3} width={50} alt="" />
+            <img src={user} className="rounded-full object-cover" width={50} alt="" />
             <div className="flex flex-col ml-3">
-                <p className="text-white text-sm">Jenny Wilson</p>
-                <p className="text-gray-400 text-xs">Product Designer</p>
+                <p className="text-white text-sm">Wiby Fabian Rianto</p>
+                <p className="text-gray-400 text-xs">FrontEnd Developer</p>
             </div>
         </div>
       </div>
@@ -83,10 +82,10 @@ const CardPost = () => {
           dolor.
         </p>
         <div className="flex items-center mt-3">
-            <img src={user1} width={50} alt="" />
+            <img src={user} className="rounded-full object-cover" width={50} alt="" />
             <div className="flex flex-col ml-3">
-                <p className="text-white text-sm">Jenny Wilson</p>
-                <p className="text-gray-400 text-xs">Product Designer</p>
+                <p className="text-white text-sm">Wiby Fabian Rianto</p>
+                <p className="text-gray-400 text-xs">FrontEnd Developer</p>
             </div>
         </div>
       </div>
@@ -102,10 +101,10 @@ const CardPost = () => {
           dolor.
         </p>
         <div className="flex items-center mt-3">
-            <img src={user2} width={50} alt="" />
+            <img src={user} className="rounded-full object-cover" width={50} alt="" />
             <div className="flex flex-col ml-3">
-                <p className="text-white text-sm">Jenny Wilson</p>
-                <p className="text-gray-400 text-xs">Product Designer</p>
+                <p className="text-white text-sm">Wiby Fabian Rianto</p>
+                <p className="text-gray-400 text-xs">FrontEnd Developer</p>
             </div>
         </div>
       </div>
@@ -121,10 +120,10 @@ const CardPost = () => {
           dolor.
         </p>
         <div className="flex items-center mt-3">
-            <img src={user3} width={50} alt="" />
+            <img src={user} className="rounded-full object-cover" width={50} alt="" />
             <div className="flex flex-col ml-3">
-                <p className="text-white text-sm">Jenny Wilson</p>
-                <p className="text-gray-400 text-xs">Product Designer</p>
+                <p className="text-white text-sm">Wiby Fabian Rianto</p>
+                <p className="text-gray-400 text-xs">FrontEnd Developer</p>
             </div>
         </div>
       </div>
