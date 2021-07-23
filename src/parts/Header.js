@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import logo from "../assets/icons/uweb.jpg";
 import burger from "../assets/icons/menu.svg";
 import search from "../assets/icons/search.svg";
+import arrow from "../assets/icons/arrow.svg";
 
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleSearch, setToggleSearch] = useState(false);
+  const [toggleShow, setToggleShow] = useState(false);
+
   const LEFT = toggle ? -40 : -500;
   const RIGHT = toggleSearch ? 20 : -500;
+  const HEIGHT = toggleShow ? 0 : 260;
 
   function sumbit(e) {
     e.preventDefault();
@@ -21,7 +25,7 @@ const Header = () => {
 
   return (
     <div className="header relative">
-      <div className="w-1/2 flex items-center invisible md:visible">
+      <div className="w-1/2 flex items-center invisible md:visible relative">
         <div className="w-1/3">
           <Link to="/" className="text-white text-2xl flex">
             <img src={logo} width={30} alt="" />
@@ -41,12 +45,43 @@ const Header = () => {
           >
             BackEnd
           </a>
-          <a
-            href="/"
-            className="text-white hover:underline hover:text-green-300"
+          <p
+            className="text-white"
+            style={{ cursor: "pointer" }}
+            onClick={() => setToggleShow(!toggleShow)}
           >
-            FullStack
-          </a>
+            Other
+            <img src={arrow} className="inline-block ml-1" alt="" />
+          </p>
+          <div
+            className="bg-gray-500 absolute overflow-hidden rounded-lg flex flex-col top-10 -right-20 transition-all duration-300"
+            style={{ width: 200, height: HEIGHT }}
+          >
+            <a
+              href="/"
+              className="text-white hover:underline p-5  hover:text-green-300"
+            >
+              FullStack
+            </a>
+            <a
+              href="/"
+              className="text-white hover:underline p-5  hover:text-green-300"
+            >
+              Traveling
+            </a>
+            <a
+              href="/"
+              className="text-white hover:underline p-5  hover:text-green-300"
+            >
+              Technology
+            </a>
+            <a
+              href="/"
+              className="text-white hover:underline p-5  hover:text-green-300"
+            >
+              Lifestyle
+            </a>
+          </div>
         </div>
       </div>
       <div className="w-1/2 flex text-right items-center hidden md:block">
@@ -55,7 +90,6 @@ const Header = () => {
             type="text"
             placeholder="Search"
             className="outline-none px-6 py-2 text-white rounded-2xl bg-gray-800"
-            
           />
         </form>
       </div>
@@ -94,7 +128,7 @@ const Header = () => {
         <div className="ml-auto p-5">
           <img src={burger} onClick={() => setToggle(!toggle)} alt="" />
         </div>
-        <div className="flex flex-col p-5">
+        <div className="flex flex-col p-5 relative h-full">
           <a
             href="/"
             className="text-white hover:underline mb-10 hover:text-green-300"
@@ -107,12 +141,42 @@ const Header = () => {
           >
             BackEnd
           </a>
-          <a
-            href="/"
-            className="text-white hover:underline mb-10 hover:text-green-300"
+          <p
+            className="text-white mb-10"
+            onClick={() => setToggleShow(!toggleShow)}
           >
-            FullStack
-          </a>
+            Other
+            <img src={arrow} className="inline-block ml-1" alt="" />
+          </p>
+          <div
+            className="bg-gray-300 absolute overflow-hidden rounded-lg flex flex-col top-44 transition-all duration-300"
+            style={{ width: 200, height: HEIGHT }}
+          >
+            <a
+              href="/"
+              className="text-black hover:underline p-5  hover:text-green-300"
+            >
+              FullStack
+            </a>
+            <a
+              href="/"
+              className="text-black hover:underline p-5  hover:text-green-300"
+            >
+              Traveling
+            </a>
+            <a
+              href="/"
+              className="text-black hover:underline p-5  hover:text-green-300"
+            >
+              Technology
+            </a>
+            <a
+              href="/"
+              className="text-black hover:underline p-5  hover:text-green-300"
+            >
+              Lifestyle
+            </a>
+          </div>
         </div>
       </div>
     </div>
