@@ -19,9 +19,9 @@ const Hero = () => {
           ullamco cillum dolor. Voluptate <br /> exercitation incididunt aliquip
           deserunt <br /> reprehenderit elit laborum.{" "}
         </p>
-        <div className="flex mt-5 mb-5">
+        <div className="flex items-center mt-5 mb-5">
             <img src={user} width={50} className="rounded-full object-cover" alt="" />
-            <div className="flex flex-col ml-3 justify-center">
+            <div className="flex flex-col ml-3">
                 <p className="text-white text-sm">Wiby Fabian Rianto</p>
                 <p className="text-gray-400 text-xs">FrontEnd Developer</p>
             </div>
