@@ -14,7 +14,7 @@ const Header = () => {
 
   const LEFT = toggle ? -40 : -500;
   const RIGHT = toggleSearch ? 20 : -500;
-  const HEIGHT = toggleShow ? 0 : 260;
+  const HEIGHT = toggleShow ? 260 : 0;
 
   function sumbit(e) {
     e.preventDefault();
@@ -53,7 +53,7 @@ const Header = () => {
           >
             Other
             <span>
-              {toggleShow ? (
+              {!toggleShow ? (
                 <img
                   src={arrow}
                   className="ml-1 inline-block transition-all duration-300"
@@ -162,7 +162,7 @@ const Header = () => {
           >
             Other
             <span>
-              {toggleShow ? (
+              {!toggleShow ? (
                 <img
                   src={arrow}
                   className="ml-1 inline-block transition-all duration-300"

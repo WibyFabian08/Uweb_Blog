@@ -8,9 +8,9 @@ import hero from "../assets/images/hero.png";
 
 const Detail = () => {
   return (
-    <div className="container mx-auto text-center px-10 md:px-20">
+    <div className="container mx-auto px-10 md:px-20">
       <Header></Header>
-      <div className="flex flex-col justify-center items-center mt-16">
+      <div className="flex flex-col text-center justify-center items-center mt-16">
         <p className="text-sm text-gray-400">UI DESIGN - July 2, 2021</p>
         <h2 className="text-white text-2xl mt-3">
           Understanding color theory: the color wheel and finding <br />{" "}
