@@ -20,7 +20,7 @@ const Hero = () => {
           deserunt <br /> reprehenderit elit laborum.{" "}
         </p>
         <div className="flex mt-5 mb-5">
-            <img src={user} width={50} className="object-cover rounded-full" alt="" />
+            <img src={user} width={50} className="object-cover" style={{borderRadius: '50%'}} alt="" />
             <div className="flex flex-col ml-3 justify-center">
                 <p className="text-white text-sm">Leslie Alexander</p>
                 <p className="text-gray-400 text-xs">UI Designer</p>
