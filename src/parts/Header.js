@@ -3,6 +3,7 @@ import logo from "../assets/icons/uweb.jpg";
 import burger from "../assets/icons/menu.svg";
 import search from "../assets/icons/search.svg";
 import arrow from "../assets/icons/arrow.svg";
+import down from "../assets/icons/down.svg";
 
 import { Link } from "react-router-dom";
 
@@ -51,7 +52,21 @@ const Header = () => {
             onClick={() => setToggleShow(!toggleShow)}
           >
             Other
-            <img src={arrow} className="inline-block ml-1" alt="" />
+            <span>
+              {toggleShow ? (
+                <img
+                  src={arrow}
+                  className="ml-1 inline-block transition-all duration-300"
+                  alt=""
+                />
+              ) : (
+                <img
+                  src={down}
+                  className="ml-1 inline-block transition-all duration-300"
+                  alt=""
+                />
+              )}
+            </span>
           </p>
           <div
             className="bg-gray-500 absolute overflow-hidden rounded-lg flex flex-col top-10 -right-20 transition-all duration-300"
@@ -79,7 +94,7 @@ const Header = () => {
               href="/"
               className="text-white hover:underline p-5  hover:text-green-300"
             >
-              Lifestyle
+              Post Article
             </a>
           </div>
         </div>
@@ -146,7 +161,21 @@ const Header = () => {
             onClick={() => setToggleShow(!toggleShow)}
           >
             Other
-            <img src={arrow} className="inline-block ml-1" alt="" />
+            <span>
+              {toggleShow ? (
+                <img
+                  src={arrow}
+                  className="ml-1 inline-block transition-all duration-300"
+                  alt=""
+                />
+              ) : (
+                <img
+                  src={down}
+                  className="ml-1 inline-block transition-all duration-300"
+                  alt=""
+                />
+              )}
+            </span>
           </p>
           <div
             className="bg-gray-300 absolute overflow-hidden rounded-lg flex flex-col top-44 transition-all duration-300"
@@ -174,7 +203,7 @@ const Header = () => {
               href="/"
               className="text-black hover:underline p-5  hover:text-green-300"
             >
-              Lifestyle
+              Post Article
             </a>
           </div>
         </div>
