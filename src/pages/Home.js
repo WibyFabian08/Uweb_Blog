@@ -9,7 +9,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:4000/v1/blog/posts")
+      .get("https://uweb-blog/v1/blog/posts.herokuapp.com")
       .then((res) => {
         setData(res.data);
       })
