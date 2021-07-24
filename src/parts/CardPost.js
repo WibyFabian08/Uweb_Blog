@@ -15,7 +15,7 @@ const CardPost = ({ data }) => {
               key={index}
             >
               <img
-                src={`http://localhost:4000/${data?.image}`}
+                src={`https://uweb-blog.herokuapp.com/${data?.image}`}
                 className="w-full object-cover rounded-3xl"
                 alt=""
               />

@@ -8,7 +8,7 @@ const PostByTag = ({ match }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/v1/blog/posts/${match.params.tag}`)
+      .get(`https://uweb-blog.herokuapp.com/v1/blog/posts/${match.params.tag}`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);

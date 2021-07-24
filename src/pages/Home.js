@@ -9,9 +9,10 @@ const Home = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("https://uweb-blog/v1/blog/posts.herokuapp.com")
+      .get("https://uweb-blog.herokuapp.com/v1/blog/posts")
       .then((res) => {
         setData(res.data);
+        console.log(res.data)
       })
       .catch((err) => {
         console.log(err?.response?.data?.message);

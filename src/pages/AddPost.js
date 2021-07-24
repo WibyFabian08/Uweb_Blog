@@ -39,7 +39,7 @@ const AddPost = () => {
     post.append("profession", data.profession);
 
     axios
-      .post(`http://localhost:4000/v1/blog/post`, post, {
+      .post(`https://uweb-blog.herokuapp.com/v1/blog/post`, post, {
         headers: {
           "Content-Type": "Multipart/Form-Data",
         },

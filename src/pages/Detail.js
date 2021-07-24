@@ -16,7 +16,7 @@ const Detail = ({ match }) => {
   const [data, setData] = useState(null);
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/v1/blog/post/${match.params.id}`)
+      .get(`https://uweb-blog.herokuapp.com/v1/blog/post/${match.params.id}`)
       .then((res) => {
         console.log(res.data.data);
         setData(res.data.data);
@@ -48,7 +48,7 @@ const Detail = ({ match }) => {
   const deletePost = () => {
     setIsLoading(true);
     axios
-      .delete(`http://localhost:4000/v1/blog/post/${match.params.id}`)
+      .delete(`https://uweb-blog.herokuapp.com/v1/blog/post/${match.params.id}`)
       .then((res) => {
         console.log(res.data);
         setIsLoading(false);
@@ -82,7 +82,7 @@ const Detail = ({ match }) => {
           </div>
         </div>
         <img
-          src={`http://localhost:4000/${data?.image}`}
+          src={`https://uweb-blog.herokuapp.com/${data?.image}`}
           width={896}
           className="object-cover rounded-3xl"
           alt=""
