@@ -10,8 +10,8 @@ const CardPost = ({ data }) => {
           const formatedDate = new Date(data?.createdAt).toDateString();
           return (
             <div
-              style={{ width: 340 }}
-              className="mb-16 flex flex-col justify-between mx-4"
+              // style={{ width: 340 }}
+              className="mb-16 flex flex-col justify-between w-full md:w-1/3 px-4"
               key={index}
             >
               <img

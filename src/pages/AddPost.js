@@ -69,13 +69,15 @@ const AddPost = () => {
     setImage(file);
   };
   return (
-    <div className="container mx-auto px-10 md:px-20">
-      <Header></Header>
+    <div className="container mx-auto">
+      <div className="px-10">
+        <Header></Header>
+      </div>
       <h2 className="text-white text-4xl mb-5 mt-10 text-center">
         Add New Post
       </h2>
       <div className="flex justify-center">
-        <div className="w-1/2 flex flex-col">
+        <div className="w-full md:w-1/2 flex flex-col px-5 md:px-0">
           <div className="flex flex-col mb-5">
             <label htmlFor="title" className="text-white text-1xl mb-2">
               Post Title
