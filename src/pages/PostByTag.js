@@ -30,7 +30,7 @@ const PostByTag = ({ match }) => {
     if (data.data.length === 0) {
       return (
         <div
-          style={{ height: "100vh" }}
+          style={{ height: 800 }}
           className="container mx-auto px-10 md:px-20 flex flex-col justify-between"
         >
           <Header></Header>
