@@ -31,12 +31,13 @@ const PostByTag = ({ match }) => {
       return (
         <div
           style={{ height: "100vh" }}
-          className="container mx-auto px-10 md:px-20"
+          className="container mx-auto px-10 md:px-20 flex flex-col justify-between"
         >
           <Header></Header>
           <div className="text-white p-5 text-center text-3xl capitalize mt-30">
             {match.params.tag} Post not found
           </div>
+          <Footer></Footer>
         </div>
       );
     }

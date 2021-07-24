@@ -132,10 +132,10 @@ const Header = ({ match }) => {
 
       <div className="visible md:invisible flex items-center justify-between absolute inset-0">
         <img src={burger} onClick={() => setToggle(!toggle)} alt="" />
-        <div className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={logo} width={30} alt="" />
           <h2 className="text-white ml-2">Uweb</h2>
-        </div>
+        </Link>
         <img
           src={search}
           onClick={() => setToggleSearch(!toggleSearch)}
