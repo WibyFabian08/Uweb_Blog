@@ -5,9 +5,9 @@ import search from "../assets/icons/search.svg";
 import arrow from "../assets/icons/arrow.svg";
 import down from "../assets/icons/down.svg";
 
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ match }) => {
   const [toggle, setToggle] = useState(false);
   const [toggleSearch, setToggleSearch] = useState(false);
   const [toggleShow, setToggleShow] = useState(false);
@@ -15,6 +15,12 @@ const Header = () => {
   const LEFT = toggle ? -40 : -500;
   const RIGHT = toggleSearch ? 20 : -500;
   const HEIGHT = toggleShow ? 260 : 0;
+
+  function getNavLink(path) {
+    return match.url === path ? "text-green-300" : "text-white";
+  }
+
+  console.log(match);
 
   function sumbit(e) {
     e.preventDefault();
@@ -34,18 +40,24 @@ const Header = () => {
           </Link>
         </div>
         <div className="w-1/2 flex items-center justify-between">
-          <a
-            href="/"
-            className="text-white hover:underline hover:text-green-300"
+          <Link
+            to="/posts/frontend"
+            className={[
+              "hover:underline hover:text-green-300",
+              getNavLink("/posts/frontend"),
+            ].join(" ")}
           >
             FrontEnd
-          </a>
-          <a
-            href="/"
-            className="text-white hover:underline hover:text-green-300"
+          </Link>
+          <Link
+            to="/posts/backend"
+            className={[
+              "hover:underline hover:text-green-300",
+              getNavLink("/posts/backend"),
+            ].join(" ")}
           >
             BackEnd
-          </a>
+          </Link>
           <p
             className="text-white"
             style={{ cursor: "pointer" }}
@@ -72,30 +84,39 @@ const Header = () => {
             className="bg-gray-500 absolute overflow-hidden rounded-lg flex flex-col top-10 -right-20 transition-all duration-300"
             style={{ width: 200, height: HEIGHT }}
           >
-            <a
-              href="/"
-              className="text-white hover:underline p-5  hover:text-green-300"
+            <Link
+              to="/posts/fullstack"
+              className={[
+                "hover:underline p-5 hover:text-green-300",
+                getNavLink("/posts/fullstack"),
+              ].join(" ")}
             >
               FullStack
-            </a>
-            <a
-              href="/"
-              className="text-white hover:underline p-5  hover:text-green-300"
+            </Link>
+            <Link
+              to="/posts/travelling"
+              className={[
+                "hover:underline p-5 hover:text-green-300",
+                getNavLink("/posts/travelling"),
+              ].join(" ")}
             >
               Traveling
-            </a>
-            <a
-              href="/"
-              className="text-white hover:underline p-5  hover:text-green-300"
+            </Link>
+            <Link
+              to="/posts/technology"
+              className={[
+                "hover:underline p-5 hover:text-green-300",
+                getNavLink("/posts/technology"),
+              ].join(" ")}
             >
               Technology
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              to="/add"
               className="text-white hover:underline p-5  hover:text-green-300"
             >
               Post Article
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -144,18 +165,18 @@ const Header = () => {
           <img src={burger} onClick={() => setToggle(!toggle)} alt="" />
         </div>
         <div className="flex flex-col p-5 relative h-full">
-          <a
-            href="/"
+          <Link
+            to="/posts/frontend"
             className="text-white hover:underline mb-10 hover:text-green-300"
           >
             FrontEnd
-          </a>
-          <a
-            href="/"
+          </Link>
+          <Link
+            to="/posts/backend"
             className="text-white hover:underline mb-10 hover:text-green-300"
           >
             BackEnd
-          </a>
+          </Link>
           <p
             className="text-white mb-10"
             onClick={() => setToggleShow(!toggleShow)}
@@ -181,30 +202,30 @@ const Header = () => {
             className="bg-gray-300 absolute overflow-hidden rounded-lg flex flex-col top-44 transition-all duration-300"
             style={{ width: 200, height: HEIGHT }}
           >
-            <a
-              href="/"
+            <Link
+              to="/posts/fullstack"
               className="text-black hover:underline p-5  hover:text-green-300"
             >
               FullStack
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              to="/posts/travelling"
               className="text-black hover:underline p-5  hover:text-green-300"
             >
               Traveling
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              to="/posts/technology"
               className="text-black hover:underline p-5  hover:text-green-300"
             >
               Technology
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              to="/add"
               className="text-black hover:underline p-5  hover:text-green-300"
             >
               Post Article
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -212,4 +233,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

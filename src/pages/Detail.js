@@ -1,58 +1,102 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import Header from "../parts/Header";
 import Footer from "../parts/Footer";
 
-import user from "../assets/images/author-0.png";
-import hero from "../assets/images/hero.png";
+import user from "../assets/images/user.png";
+import axios from "axios";
 
-const Detail = () => {
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+
+const Detail = ({ match }) => {
+  let history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/v1/blog/post/${match.params.id}`)
+      .then((res) => {
+        console.log(res.data.data);
+        setData(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [match.params.id]);
+
+  const formatedDate = new Date(data?.createdAt).toDateString();
+
+  const submit = () => {
+    confirmAlert({
+      title: 'Confirm to submit',
+      message: 'Are you sure to delete this post?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => deletePost()
+        },
+        {
+          label: 'No',
+          onClick: () => console.log('delete canceled')
+        }
+      ]
+    });
+  }
+
+  const deletePost = () => {
+    setIsLoading(true);
+    axios
+      .delete(`http://localhost:4000/v1/blog/post/${match.params.id}`)
+      .then((res) => {
+        console.log(res.data);
+        setIsLoading(false);
+        history.push("/");
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        console.log(err);
+      });
+  };
+
+  if (!data) {
+    return (
+      <div style={{ height: "100vh" }}>
+        <div className="text-white p-5 text-xl">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-10 md:px-20">
       <Header></Header>
       <div className="flex flex-col text-center justify-center items-center mt-16">
-        <p className="text-sm text-gray-400">UI DESIGN - July 2, 2021</p>
-        <h2 className="text-white text-2xl mt-3">
-          Understanding color theory: the color wheel and finding <br />{" "}
-          complementary colors
-        </h2>
+        <p className="text-sm text-gray-400 capitalize">{`${data?.tag} - ${formatedDate}`}</p>
+        <h2 className="text-white text-2xl mt-3">{data?.title}</h2>
         <div className="flex items-center justify-center mt-10 mb-8">
           <img src={user} width={50} alt="" />
           <div className="ml-3 flex flex-col text-left">
-            <p className="text-white text-sm">Leslie Alexander</p>
-            <p className="text-gray-400 text-xs">UI Designer</p>
+            <p className="text-white text-sm">{data?.author?.name}</p>
+            <p className="text-gray-400 text-xs">{data?.author?.profession}</p>
           </div>
         </div>
         <img
-          src={hero}
+          src={`http://localhost:4000/${data?.image}`}
           width={896}
           className="object-cover rounded-3xl"
           alt=""
         />
         <div className="mt-10 w-full">
-          <p className="text-sm text-gray-400 text-justify">
-            Male sixth sea it a. Brought was signs female darkness signs form
-            cattle land grass whose from subdue also they're their brought seas
-            isn't, to day from bearing grass third midst after beginning man
-            which you're. Dry, gathering beginning given made them evening.
-          </p>
-          <br />
-          <p className="text-sm text-gray-400 text-justify">
-            Lights dry. Thing, likeness, forth shall replenish upon abundantly
-            our green. Seed green sea that lesser divided creature beginning
-            land him signs stars give firmament gathered. Wherein there their
-            morning a he grass. Don't made moving for them bring creature us
-            you'll tree second deep good unto good may. Us yielding.
-            <br /> <br />
-            Have. Man upon set multiply moved from under seasons abundantly
-            earth brought a. They're open moved years saw isn't morning
-            darkness. Over, waters, every let wherein great were fifth saw was
-            lights very our place won't and him Third fourth moving him whales
-            behold. Beast second stars lights great was don't green give subdue
-            his. Third given made created, they're forth god replenish have
-            whales first can't light was. Herb you'll them beast kind divided.
-            Were beginning fly air multiply god Yielding sea don't were forth.
-          </p>
+          <p className="text-lg text-gray-400 text-justify">{data?.body}</p>
+        </div>
+        <div>
+          <button
+            onClick={() => submit()}
+            className="bg-red-500 text-white px-6 py-1 rounded-md mt-10 ml-3"
+          >
+            {isLoading ? "Deleting..." : "Delete Post"}
+          </button>
         </div>
       </div>
       <Footer></Footer>
