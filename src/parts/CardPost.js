@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import user from "../assets/images/user.png";
+import user from "../assets/images/me.png";
 
 const CardPost = ({ data }) => {
   return (
