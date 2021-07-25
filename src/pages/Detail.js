@@ -75,7 +75,7 @@ const Detail = ({ match }) => {
         <p className="text-sm text-gray-400 capitalize">{`${data?.tag} - ${formatedDate}`}</p>
         <h2 className="text-white text-2xl mt-3">{data?.title}</h2>
         <div className="flex items-center justify-center mt-10 mb-8">
-          <img src={user} width={50} alt="" />
+          <img src={user} width={50} className="rounded-full" alt="" />
           <div className="ml-3 flex flex-col text-left">
             <p className="text-white text-sm">{data?.author?.name}</p>
             <p className="text-gray-400 text-xs">{data?.author?.profession}</p>
