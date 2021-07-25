@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Header from "../parts/Header";
 import Footer from "../parts/Footer";
 
-import user from "../assets/images/user.png";
+import user from "../assets/images/me.png";
 import axios from "axios";
 
 import { confirmAlert } from 'react-confirm-alert'; // Import
